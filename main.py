@@ -28,11 +28,7 @@ handRank = {
     8 : "Straight Flush"
 }
 
-<<<<<<< Updated upstream
 hand = "AS AC 7H 7D 6S"
-=======
-hand = "AS AS AS AS 6S 7D 8H"
->>>>>>> Stashed changes
 def rankHand(hand): #returns [hand rank, card rank] (ex. [5, 13] is a flush with highest card being an Ace)
     rank = [0, 0]
 
