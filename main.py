@@ -28,7 +28,7 @@ handRank = {
     8 : "Straight Flush"
 }
 
-hand = "AS AC AH AD 7S 7D 7H"
+hand = "AS AC 7H 7D 6S"
 def rankHand(hand): #returns [hand rank, card rank] (ex. [5, 13] is a flush with highest card being an Ace)
     rank = [0, 0]
 
@@ -46,6 +46,7 @@ def rankHand(hand): #returns [hand rank, card rank] (ex. [5, 13] is a flush with
             sortedArr.append(cardRank[card[0]])
 
     sortedArr.sort()
+    print(hand)
     print(sortedArr)
 
     #test for straightflush, then straight
@@ -69,8 +70,9 @@ def rankHand(hand): #returns [hand rank, card rank] (ex. [5, 13] is a flush with
             if sortedArr.count(sortedArr[len(sortedArr)-i-1]) == 3:
                 threeArray = [x for x in sortedArr if x != sortedArr[len(sortedArr)-i-1]]
                 for a in range(len(threeArray)-1):
-                    if threeArray.count(sortedArr[len(sortedArr)-a-1]) == 2:
+                    if threeArray.count(threeArray[len(threeArray)-a-1]) == 2:
                         rank[0] = 6 #full house
+                        break
                     else:
                         rank[0] = 3 #three of a kind
 
@@ -96,4 +98,4 @@ def pokerHand(hand):
 #suits are not ranked and can be: S (spades), C (clubs), H (hearts), D (diamonds)
 #ex. AC 5H AD KH 2S
 
-print(rankHand(hand))
+print(rankHand(hand) + " succi succi")
